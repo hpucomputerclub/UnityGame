@@ -1,0 +1,28 @@
+------------------------------------------------------
+GUIDE
+------------------------------------------------------
+
+Purpose
+=======================================================
+To allow everyone to pick roles on which classes they would like to work on to prevent people duplicated work, merging issues and just having a bad time. Lets only let one person work on a file at a time. Please add new classes/scripts in our project below along with your name if you are interested in working on it and remove your name when you are done.
+
+Diagram
+=======================================================
+Link: https://lucid.app/lucidchart/283f727b-6f6c-4caf-8bff-ab18051392d7/
+(Add new classes to the diagram above)
+
+GitHub
+=======================================================
+ALWAYS pull before you start working and push OFTEN to reduce conflicts and form a better history. Also adding descriptive messages to your commits are always nice.
+
+
+------------------------------------------------------
+SCRIPT ASSIGNMENT
+------------------------------------------------------
+Entity:
+Player:
+Enemy:
+Projectile:
+Path:
+Powerup:
+Weapon:Kevin
