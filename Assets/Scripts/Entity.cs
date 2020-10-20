@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Entity : MonoBehaviour
 {
+
+    //message
     public float baseHealth;
     public float baseDamage;
     public float baseSpeed;
@@ -18,8 +20,8 @@ public class Entity : MonoBehaviour
     public Vector2 vel;
     public Vector2 acc;
     public int regenValue;
-   public int  regenTime;
-//    public Weapon[]  weapons;
+    public int regenTime;
+    //    public Weapon[]  weapons;
     public int currentWeapon;
     public bool isAlive;
     public bool hasShield;
@@ -27,12 +29,12 @@ public class Entity : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
