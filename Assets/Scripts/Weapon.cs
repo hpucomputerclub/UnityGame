@@ -13,4 +13,9 @@ public class Weapon{
     public int cost = 0;
     public float effectTime=0f;
     public int impactRange=0;
+    public bool isRanged;
+
+    public bool UseWeapon(){//remove 1 from uses if not infinite and return false if broken
+        return infiniteUse || --uses <= 0;
+    }
 }
