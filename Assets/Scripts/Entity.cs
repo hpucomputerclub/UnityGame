@@ -29,9 +29,9 @@ public class Entity : MonoBehaviour
     protected int regenTime; // ??
 
     //movement
-    protected Vector3 vel = Vector3.zero; // current speed and direction
+    public Vector3 vel = Vector3.zero; // current speed and direction
     protected Vector3 acc = Vector3.zero; // current acc
-    
+
     //other
     protected LayerMask layerMask; // collision mask
     protected Rigidbody2D rb;
@@ -57,45 +57,57 @@ public class Entity : MonoBehaviour
         acc = Vector3.zero;
     }
 
-    void FixedUpdate(){
+    void FixedUpdate()
+    {
 
     }
 
-    void OnCollisionEnter2D(Collision2D collision){
+    void OnCollisionEnter2D(Collision2D collision)
+    {
 
     }
 
-    public void TakeDamage(float value){
-        if(!invincible && !hasShield && isAlive){
+    public void TakeDamage(float value)
+    {
+        if (!invincible && !hasShield && isAlive)
+        {
             health -= value;
-            if(health <= 0){
+            if (health <= 0)
+            {
                 Byebye();
             }
         }
         hasShield = false;
     }
 
-    public void Heal(float value){
-        if(isAlive) health = Mathf.Min(GetMaxHealth(),health+value);
+    public void Heal(float value)
+    {
+        if (isAlive) health = Mathf.Min(GetMaxHealth(), health + value);
     }
 
-    public void DealDamage(Entity enemy){
+    public void DealDamage(Entity enemy)
+    {
         enemy.TakeDamage(GetDamage());
     }
 
-    public void ApplyPowerup(Powerup powerup){
+    public void ApplyPowerup(Powerup powerup)
+    {
 
     }
 
-    public void Byebye(){
+    public void Byebye()
+    {
         isAlive = false;
         Destroy(gameObject);
     }
 
-    public void Attack(){
-        if(isAlive && CanAttack()){//isAttacking
+    public void Attack()
+    {
+        if (isAlive && CanAttack())
+        {//isAttacking
             Weapon current = GetWeapon();
-            if(!current.UseWeapon()){
+            if (!current.UseWeapon())
+            {
                 //weapon is broken
                 weapons.RemoveAt(currentWeapon);//remove item
                 currentWeapon = 0;//change weapon selection
@@ -104,37 +116,45 @@ public class Entity : MonoBehaviour
         }
     }
 
-    public bool CanAttack(){
+    public bool CanAttack()
+    {
         Weapon current = GetWeapon();
         return isAlive && Time.time - lastAttackTime >= GetAttackRate();
     }
 
-    public float GetMaxHealth(){
+    public float GetMaxHealth()
+    {
         Weapon current = GetWeapon();
         return baseHealth * current.healthMultiplier + current.healthBonus;
     }
 
-    public float GetDamage(){
+    public float GetDamage()
+    {
         Weapon current = GetWeapon();
         return baseDamage * current.damageMultiplier + current.damageBonus;
     }
 
-    public float GetSpeed(){
+    public float GetSpeed()
+    {
         Weapon current = GetWeapon();
         return baseSpeed * current.speedMultiplier + current.speedBonus;
     }
 
-    public float GetAttackRate(){
+    public float GetAttackRate()
+    {
         return baseAttackRate * GetWeapon().attackRateMultiplier;
     }
 
-    public void ApplyShield(){
-        if(isAlive){
+    public void ApplyShield()
+    {
+        if (isAlive)
+        {
             hasShield = true;
         }
     }
 
-    public Weapon GetWeapon(){
+    public Weapon GetWeapon()
+    {
         return weapons[currentWeapon];
     }
 }
