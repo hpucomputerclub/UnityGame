@@ -20,6 +20,7 @@ public class RangedWeapon : Weapon
     }
 
     public bool UseWeapon(){
+        print("Ranged Attack");
         Instantiate(arrow,owner.transform.position,Quaternion.Euler(owner.transform.forward));
         return base.UseWeapon();
     }
