@@ -7,16 +7,6 @@ public class Powerup : MonoBehaviour
 
     public int cost;
     public int healthModifier;
-    public Projectile projectile;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Projectile projectile;//shot as this projectile to apply powerup
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

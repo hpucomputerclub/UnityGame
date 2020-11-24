@@ -6,22 +6,12 @@ public class RangedWeapon : Weapon
 {
     public Projectile[] projectileTypes;
 
-    public Projectile arrow;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public bool UseWeapon(){
+    public override bool UseWeapon(){
         print("Ranged Attack");
-        Instantiate(arrow,owner.transform.position,Quaternion.Euler(owner.transform.forward));
+        if(projectileTypes.Length > 0){
+            Projectile projectile = (Projectile)Instantiate(projectileTypes[Random.Range(0,projectileTypes.Length-1)],owner.transform.position,Quaternion.Euler(owner.transform.forward));
+            projectile.firedFrom = this;
+        }
         return base.UseWeapon();
     }
 }

@@ -17,7 +17,7 @@ public class Weapon: MonoBehaviour{
     public float effectTime=0f;
     public bool isRanged;
 
-    public bool UseWeapon(){//remove 1 from uses if not infinite and return false if broken
+    public virtual bool UseWeapon(){//remove 1 from uses if not infinite and return false if broken
         print("USE WEAPON");
         return infiniteUse || --uses <= 0;
     }

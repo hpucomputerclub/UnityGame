@@ -7,17 +7,6 @@ public class EnemySpawn : MonoBehaviour
 
     public Enemy enemyType;
     public int enemyCount;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void Spawn(){
         if(enemyCount > 0){

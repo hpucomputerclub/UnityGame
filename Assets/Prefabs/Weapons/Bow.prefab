@@ -109,4 +109,3 @@ MonoBehaviour:
   isRanged: 1
   projectileTypes:
   - {fileID: 7415075408717265487, guid: 01119e5238bc24171828bcf4adb87cc0, type: 3}
-  arrow: {fileID: 7415075408717265487, guid: 01119e5238bc24171828bcf4adb87cc0, type: 3}

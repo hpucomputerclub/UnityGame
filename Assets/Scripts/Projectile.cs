@@ -6,15 +6,11 @@ public class Projectile : Entity
 {
     public Weapon firedFrom;
     public int impactRange=0;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+
+    protected override void Start(){
+        base.Start();
+        vel.y = firedFrom.owner.transform.forward.z * speed;
+        print("Velocity Proj: " + vel.y);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

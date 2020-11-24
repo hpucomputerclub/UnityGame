@@ -11,16 +11,12 @@ public class EnemyGroup : MonoBehaviour
     int enemiesLeft;
 
     // Start is called before the first frame update
-    void Start()
+    protected void Start()
     {
         GetEnemyCount();
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void Spawn(){
         if(enemiesLeft > 0){

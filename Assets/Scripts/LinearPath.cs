@@ -4,22 +4,11 @@ using UnityEngine;
 
 public class LinearPath : Path
 {
-    // Start is called before the first frame update
-    void Start()
+
+    public override void MoveEnemy(Enemy enemy)
     {
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-    public void MoveEnemy(Enemy enemy)
-    {
-
-        enemy.vel = Vector2.down * enemy.GetSpeed();
+        enemy.vel = Vector2.down * enemy.speed;
 
     }
 
