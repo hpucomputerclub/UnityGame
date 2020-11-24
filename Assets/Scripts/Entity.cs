@@ -48,6 +48,9 @@ public class Entity : MonoBehaviour
         //display forward direction
         // Debug.DrawRay (transform.position, transform.right, Color.red, 15f, true);
         transform.position += vel;
+        if(Mathf.Abs(transform.position.y) > 10){
+            Byebye();
+        }
         // vel += acc;
         // acc = Vector3.zero;
     }
